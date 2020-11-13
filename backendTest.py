@@ -166,5 +166,5 @@ for j in range(len(queryTerms)):
         for i in range(n):
             printTerms.append(fileTerms[i][j][1])
         printTable.append(printTerms)
-        print(printTerms)
-# print(printTable)
+for i in range(len(printTable)):
+    print(printTable[i])
