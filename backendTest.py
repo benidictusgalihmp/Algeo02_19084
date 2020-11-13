@@ -161,6 +161,7 @@ printTable = []
 for j in range(len(queryTerms)):
     if (queryTerms[j][1] >= 1):
         printTerms = []
+        printTerms.append(queryTerms[j][0])
         printTerms.append(queryTerms[j][1])
         for i in range(n):
             printTerms.append(fileTerms[i][j][1])
