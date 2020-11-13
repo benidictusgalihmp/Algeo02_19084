@@ -7,11 +7,12 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 stemmer = StemmerFactory().create_stemmer()
 stopword = StopWordRemoverFactory().create_stop_word_remover()
 
-def lowStemStop(strings) :
-# Mereturn strings yang sudah dilowercase, distem, dan dihilangkan stopwordsnya
+def lowStemStopSplit(strings) :
+# Mereturn kata-kata yang ada di strings setelah dilowercase, distem, dan dihilangkan stopwordsnya
     strings = strings.lower()
     strings = stemmer.stem(strings)
     strings = stopword.remove(strings)
+    strings = strings.split()
     return strings
 
 def getFiles() :
@@ -34,48 +35,116 @@ def getFiles() :
 
     return list_of_files, lines
 
-def countTerm(kalimat) :
-# Mereturn sebuah list dengan perhitungan kemunculan kata setelah dilowcase, distem, dan stopwords dihilangkan
-    perhitunganKata = []
-    kalimat = lowStemStop(kalimat)
-    kalimat = kalimat.split()
+def getKamusData(query) :
+#Membuat kamus data berdasarkan file dan query
+    buang, kalimat = getFiles()
+    concatKalimat = ""
     for i in kalimat :
-        kata = []
-        found = False
-        for j in perhitunganKata :
-            if i == j[0] :
-                found = True
+        concatKalimat = concatKalimat + i + " "
+
+    concatKalimat = lowStemStopSplit(concatKalimat)
+    query = lowStemStopSplit(query)
+
+    for i in concatKalimat :
+        query.append(i)
+
+    kamusData = []
+    for i in query :
+        Found = False
+        for j in kamusData :
+            if i == j :
+                Found = True
+                break
         
-        if found == False :
-            count = 0
-            for k in kalimat :
-                if i == k :
-                    count = count + 1
-            kata.append(i)
-            kata.append(count)
-            perhitunganKata.append(kata)
-    
+        if Found == False :
+            kamusData.append(i)
+            
+    return kamusData
+
+def countTerm(kalimat, query) :
+# Mereturn sebuah list dengan perhitungan kemunculan kata setelah dilowcase, distem, dan stopwords dihilangkan
+    kamusData = getKamusData(query)
+    perhitunganKata = []
+    kalimat = lowStemStopSplit(kalimat)
+    for i in kamusData :
+        kata = [i]
+        count = 0
+        for j in kalimat :
+            if i == j :
+                count = count + 1
+        kata.append(count)
+        perhitunganKata.append(kata)
+
     return perhitunganKata
 
+def getFileTerms(kalimatFile, query) :
+#Mereturn terms dari semua file dalam bentuk array
+    fileTerms = []
+    for i in kalimatFile :
+        fileTerms.append(countTerm(i, query))
+
+    return fileTerms
+
+def getSimilarity(QTerms, DTerms) :
+#Mereturn nilai similarity dari terms query dan terms satu dokumen
+    Dot = 0
+    QLength = 0
+    DLength = 0
+    for i in range(len(QTerms)) :
+        Dot = Dot + QTerms[i][1] * DTerms[i][1]
+
+    for i in range(len(QTerms)) :
+        QLength = QLength + (QTerms[i][1] ** 2)
+    QLength = QLength ** 0.5
+
+    for i in range(len(DTerms)) :
+        DLength = DLength + (DTerms[i][1] ** 2)
+    DLength = DLength ** 0.5
+
+    Sim = Dot/(QLength * DLength)
+    
+    return Sim
+
+def getAllSim(queryTerms, fileTerms) :
+#Mereturn nilai similarity dari terms query dan terms semua dokumen
+    simArray = []
+    for i in range(len(fileTerms)) :
+        simArray.append(getSimilarity(queryTerms, fileTerms[i]))
+    
+    return simArray   
+
 #Testing
+
+#testQuery = query untuk testing
+testQuery = "Membuat tenda menyebabkan saya sangat lelah"
+queryTerms = countTerm(testQuery, testQuery)
 
 #namaFile = list nama file
 #kalimatFile = list semua kalimat pada setiap file
 namaFile, kalimatFile = getFiles()
 
 #fileTerms = perhitungan term pada kalimatFile 
-fileTerms = []
-for i in kalimatFile :
-    fileTerms.append(countTerm(i))
+fileTerms = getFileTerms(kalimatFile, testQuery)
 
-#testQuery = query untuk testing
-testQuery = "Apakah saya seorang paman?"
-testQuery = countTerm(testQuery)
+#sim = Similarity dari query dengan semua file
+sim = getAllSim(queryTerms, fileTerms)
 
-print(namaFile)
-print(kalimatFile)
-print(fileTerms)
-print(testQuery)
+#Buat di rank searchnya nanti
+n = len(sim) 
+for i in range(n-1): 
+    for j in range(0, n-i-1):  
+        if sim[j] < sim[j+1] : 
+            sim[j], sim[j+1] = sim[j+1], sim[j]
+            namaFile[j], namaFile[j+1] = namaFile[j+1], namaFile[j]
+            kalimatFile[j], kalimatFile[j+1] = kalimatFile[j+1], kalimatFile[j]
+            fileTerms[j], fileTerms[j+1] = fileTerms[j+1], fileTerms[j]
 
-#print kalimat pertama file a
-print(kalimatFile[0].split('.')[0])
+
+for i in range(len(sim)) :
+    #namanya isi link
+    print(str(i+1) + ". " + namaFile[i])
+    print("Tingkat kesamaan: " + str(sim[i]))
+    print(kalimatFile[i].split('.')[0] + "...")
+    print() 
+###
+
