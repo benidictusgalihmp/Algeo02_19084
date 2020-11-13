@@ -61,6 +61,13 @@ def getKamusData(query) :
             
     return kamusData
 
+def getFileSum(kalimatFile):
+    sum = []
+    for kalimat in kalimatFile:
+        count = kalimat.split()
+        sum.append(len(count))
+    return sum
+
 def countTerm(kalimat, query) :
 # Mereturn sebuah list dengan perhitungan kemunculan kata setelah dilowcase, distem, dan stopwords dihilangkan
     kamusData = getKamusData(query)
@@ -123,6 +130,9 @@ queryTerms = countTerm(testQuery, testQuery)
 #kalimatFile = list semua kalimat pada setiap file
 namaFile, kalimatFile = getFiles()
 
+#sumFile = jumlah kata pada setiap file
+sumFile = getFileSum(kalimatFile)
+
 #fileTerms = perhitungan term pada kalimatFile 
 fileTerms = getFileTerms(kalimatFile, testQuery)
 
@@ -138,13 +148,22 @@ for i in range(n-1):
             namaFile[j], namaFile[j+1] = namaFile[j+1], namaFile[j]
             kalimatFile[j], kalimatFile[j+1] = kalimatFile[j+1], kalimatFile[j]
             fileTerms[j], fileTerms[j+1] = fileTerms[j+1], fileTerms[j]
+            sumFile[j], sumFile[j+1] = sumFile[j+1], sumFile[j]
 
 
-for i in range(len(sim)) :
+for i in range(n) :
     #namanya isi link
     print(str(i+1) + ". " + namaFile[i])
-    print("Tingkat kesamaan: " + str(sim[i]))
-    print(kalimatFile[i].split('.')[0] + "...")
-    print() 
-###
-
+    print("   Jumlah Kata: " + str(sumFile[i]))
+    print("   Tingkat kesamaan: " + str(sim[i]*100) + "%")
+    print("   " + kalimatFile[i].split('.')[0] + ".\n")
+printTable = []
+for j in range(len(queryTerms)):
+    if (queryTerms[j][1] >= 1):
+        printTerms = []
+        printTerms.append(queryTerms[j][1])
+        for i in range(n):
+            printTerms.append(fileTerms[i][j][1])
+        printTable.append(printTerms)
+        print(printTerms)
+# print(printTable)
