@@ -1,6 +1,7 @@
 #install Sastrawi dulu
 
 import os
+from os import name
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
@@ -121,10 +122,7 @@ def getAllSim(queryTerms, fileTerms) :
     return simArray   
 
 #Testing
-
-#testQuery = query untuk testing
-testQuery = "Membuat tenda menyebabkan saya sangat lelah"
-queryTerms = countTerm(testQuery, testQuery)
+queryTerms = countTerm(name, name)
 
 #namaFile = list nama file
 #kalimatFile = list semua kalimat pada setiap file
@@ -134,7 +132,7 @@ namaFile, kalimatFile = getFiles()
 sumFile = getFileSum(kalimatFile)
 
 #fileTerms = perhitungan term pada kalimatFile 
-fileTerms = getFileTerms(kalimatFile, testQuery)
+fileTerms = getFileTerms(kalimatFile, name)
 
 #sim = Similarity dari query dengan semua file
 sim = getAllSim(queryTerms, fileTerms)
@@ -150,13 +148,6 @@ for i in range(n-1):
             fileTerms[j], fileTerms[j+1] = fileTerms[j+1], fileTerms[j]
             sumFile[j], sumFile[j+1] = sumFile[j+1], sumFile[j]
 
-
-for i in range(n) :
-    #namanya isi link
-    print(str(i+1) + ". " + namaFile[i])
-    print("   Jumlah Kata: " + str(sumFile[i]))
-    print("   Tingkat kesamaan: " + str(sim[i]*100) + "%")
-    print("   " + kalimatFile[i].split('.')[0] + ".\n")
 printTable = []
 for j in range(len(queryTerms)):
     if (queryTerms[j][1] >= 1):
