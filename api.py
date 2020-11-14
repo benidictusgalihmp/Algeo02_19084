@@ -4,7 +4,7 @@ from backendTest import *
 
 namaFile, kalimatFile = getFiles()
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 app.config["DEBUG"] = True
 
 @app.route('/', methods=['GET','POST'])
@@ -12,7 +12,7 @@ def home():
     if request.method == 'POST' and 'Query' in request.form :
         variable = request.form['Query']
         return redirect(url_for('termsFile', name = variable))
-    else:
+    else :
         return render_template('main.html')
 
 @app.route('/query', methods=['GET', 'POST'])
@@ -20,7 +20,7 @@ def termsFile(name):
     if request.method == 'POST' and 'Query' in request.form :
         variable = request.form['Query']
         return redirect(url_for('termsFile', name = variable))
-    else
+    else :
         queryTerms = countTerm(name, name)
 
         #sumFile = jumlah kata pada setiap file
@@ -60,4 +60,5 @@ def termsFile(name):
             print(printTable[i])
         return render_template('main.html', namaFile = namaFile, sumFile = sumFile, sim = sim, kalimatPertamaFile = kalimatPertamaFile, printTable = printTable)
 
-app.run()
+if __name__ == '__main__' :
+    app.run()
