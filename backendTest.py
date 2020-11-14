@@ -18,10 +18,11 @@ def lowStemStopSplit(strings) :
 
 def getFiles() :
 # Mereturn semua kalimat pada semua file .txt yang ada di directory files dalam bentuk array
-    lines = []
-    namaFile = [] 
     os.chdir('files')
-    for file in os.listdir('files') :
+    list_of_files = os.listdir()
+
+    lines=[]
+    for file in list_of_files :
         if file.endswith(".txt") :
             f = open(file, "r")
             strings = ""
@@ -29,14 +30,11 @@ def getFiles() :
                 strings = strings + line
                 strings = strings + " "
             strings = strings.replace('\n','')
-            
             lines.append(strings)
-            namaFile.append(file)
-
             f.close()
     os.chdir('../')
-    
-    return namaFile, lines
+
+    return list_of_files, lines
 
 def getKamusData(query) :
 #Membuat kamus data berdasarkan file dan query
@@ -122,5 +120,3 @@ def getAllSim(queryTerms, fileTerms) :
         simArray.append(getSimilarity(queryTerms, fileTerms[i]))
     
     return simArray   
-
-namaFile, kalimatFile = getFiles()
