@@ -18,11 +18,10 @@ def lowStemStopSplit(strings) :
 
 def getFiles() :
 # Mereturn semua kalimat pada semua file .txt yang ada di directory files dalam bentuk array
+    lines = []
+    namaFile = [] 
     os.chdir('files')
-    list_of_files = os.listdir()
-
-    lines=[]
-    for file in list_of_files :
+    for file in os.listdir('files') :
         if file.endswith(".txt") :
             f = open(file, "r")
             strings = ""
@@ -30,11 +29,14 @@ def getFiles() :
                 strings = strings + line
                 strings = strings + " "
             strings = strings.replace('\n','')
+            
             lines.append(strings)
+            namaFile.append(file)
+
             f.close()
     os.chdir('../')
-
-    return list_of_files, lines
+    
+    return namaFile, lines
 
 def getKamusData(query) :
 #Membuat kamus data berdasarkan file dan query
@@ -121,41 +123,4 @@ def getAllSim(queryTerms, fileTerms) :
     
     return simArray   
 
-#Testing
-queryTerms = countTerm(name, name)
-
-#namaFile = list nama file
-#kalimatFile = list semua kalimat pada setiap file
 namaFile, kalimatFile = getFiles()
-
-#sumFile = jumlah kata pada setiap file
-sumFile = getFileSum(kalimatFile)
-
-#fileTerms = perhitungan term pada kalimatFile 
-fileTerms = getFileTerms(kalimatFile, name)
-
-#sim = Similarity dari query dengan semua file
-sim = getAllSim(queryTerms, fileTerms)
-
-#Buat di rank searchnya nanti
-n = len(sim) 
-for i in range(n-1): 
-    for j in range(0, n-i-1):  
-        if sim[j] < sim[j+1] : 
-            sim[j], sim[j+1] = sim[j+1], sim[j]
-            namaFile[j], namaFile[j+1] = namaFile[j+1], namaFile[j]
-            kalimatFile[j], kalimatFile[j+1] = kalimatFile[j+1], kalimatFile[j]
-            fileTerms[j], fileTerms[j+1] = fileTerms[j+1], fileTerms[j]
-            sumFile[j], sumFile[j+1] = sumFile[j+1], sumFile[j]
-
-printTable = []
-for j in range(len(queryTerms)):
-    if (queryTerms[j][1] >= 1):
-        printTerms = []
-        printTerms.append(queryTerms[j][0])
-        printTerms.append(queryTerms[j][1])
-        for i in range(n):
-            printTerms.append(fileTerms[i][j][1])
-        printTable.append(printTerms)
-for i in range(len(printTable)):
-    print(printTable[i])
