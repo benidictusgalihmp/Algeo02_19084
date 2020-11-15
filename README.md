@@ -18,11 +18,12 @@ Program ini dibuat untuk memenuhi Tugas Besar 2 IF 2123 Aljabar Linier dan Geome
 ## Setup
 Cara menjalankan program ini:
 1. Install library Sastrawi: https://pypi.org/project/Sastrawi/
-2. Jalankan program melalui command line
+2. Install library Flask : https://pypi.org/project/Flask/
+3. Jalankan api.py melalui command line
 
 ## Features
 Fitur-fitur dari program ini antara lain:
-* _Stemming_ kata-kata dalam query dan dokumen
+* _Stemming_ kata-kata dan penghapusan _Stopwords_ dalam query dan dokumen
 * Kalkulasi _cosine similarity_
 * Tampilkan hasil pencarian dan tabel kata dari query
 

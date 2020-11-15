@@ -52,19 +52,8 @@ def termsFile(query):
             #sim = Similarity dari query dengan semua file
             sim = getAllSim(queryTerms, fileTerms)
 
-            #Buat di tabel
-            n = len(sim) 
-            printTable = []
-            for j in range(len(queryTerms)):
-                if (queryTerms[j][1] >= 1):
-                    printTerms = []
-                    printTerms.append(queryTerms[j][0])
-                    printTerms.append(queryTerms[j][1])
-                    for i in range(n):
-                        printTerms.append(fileTerms[i][j][1])
-                    printTable.append(printTerms)
-
             #Buat di rank search
+            n = len(sim) 
             for i in range(n-1): 
                 for j in range(0, n-i-1):  
                     if sim[j] < sim[j+1] : 
@@ -73,10 +62,10 @@ def termsFile(query):
                         kalimatFile[j], kalimatFile[j+1] = kalimatFile[j+1], kalimatFile[j]
                         fileTerms[j], fileTerms[j+1] = fileTerms[j+1], fileTerms[j]
                         sumFile[j], sumFile[j+1] = sumFile[j+1], sumFile[j]
+            kalimatPertamaFile = getKalimatPertama(kalimatFile)           
 
-            kalimatPertamaFile = []
-            for i in kalimatFile :
-                kalimatPertamaFile.append(i.split('.')[0])
+            #Buat di tabel
+            printTable = getTableValue(queryTerms, fileTerms)
 
             return render_template('main.html', length = len(sim), sortedNamaFile = sortedNamaFile, namaFile = namaFile, sim = sim, sumFile = sumFile, kalimatPertamaFile = kalimatPertamaFile, printTable = printTable, show = 1)
 

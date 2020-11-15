@@ -122,3 +122,22 @@ def getAllSim(queryTerms, fileTerms) :
         simArray.append(getSimilarity(queryTerms, fileTerms[i]))
     
     return simArray   
+
+def getTableValue(queryTerms, fileTerms) :
+    printTable = []
+    for j in range(len(queryTerms)):
+        if (queryTerms[j][1] >= 1):
+            printTerms = []
+            printTerms.append(queryTerms[j][0])
+            printTerms.append(queryTerms[j][1])
+            for i in range(len(fileTerms)):
+                printTerms.append(fileTerms[i][j][1])
+            printTable.append(printTerms)
+
+    return printTable
+
+def getKalimatPertama(kalimatFile) :
+    kalimatPertamaFile = []
+    for i in kalimatFile :
+        kalimatPertamaFile.append(i.split('.')[0])
+    return kalimatPertamaFile
