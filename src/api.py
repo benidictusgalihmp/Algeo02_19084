@@ -2,7 +2,6 @@ from flask import Flask,request,url_for,redirect,render_template
 from werkzeug.utils import secure_filename
 from backendTest import *
 
-namaFile, kalimatFile = getFiles()
 extension = {'txt'}
 
 app = Flask(__name__)
