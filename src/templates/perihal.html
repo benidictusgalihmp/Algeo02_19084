@@ -9,6 +9,9 @@
                 font-family: 'Alata';
                 box-sizing: border-box;
             }
+            body{
+                background-color: rgb(6, 156, 26);
+            }
             *, *:before, *:after {
                 box-sizing: inherit;
             }
@@ -18,21 +21,34 @@
                 font-size: smaller;
                 background-color: rgb(24, 24, 24);
                 color: white;
+                margin-top: 5px;
+                box-shadow: 7px 9px 17px 0 rgb(95, 95, 95);
             }
             .closing-Statement{
                 text-align: center;
-                background-color: black;
+                background-color: rgb(24, 24, 24);
                 color: white;
                 font-size: large;
                 padding: 1px;
             }
             .paragraph{
                 font-size: 15px;
-
+                padding: 5px;
+                margin-top: 5px;
+                box-shadow: 7px 9px 17px 0 rgb(95, 95, 95);
+                background-color: rgb(189, 189, 189);
+                color: black;
+            }
+            .photos{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 30px;
             }
             .card {
                 box-shadow: 7px 9px 17px 0 rgb(95, 95, 95);
                 margin: 8px;
+                background-color: rgb(24, 24, 24);
             }
             .column {
                 float: left;
@@ -42,6 +58,8 @@
             }
             .container {
                 padding: 0 16px;
+                margin-left: 40px;
+                color: whitesmoke;
             }
             .container::after, .row::after {
                 content: "";
@@ -60,6 +78,7 @@
         <div class="mainHeader">
             <h1>Search Engine Concept</h1>
         </div>
+
         <div class="paragraph">
             <p>Temu-balik informasi (information retrieval) merupakan proses menemukan kembali  (retrieval)  informasi  yang  relevan  terhadap  kebutuhan  pengguna  dari  suatu kumpulan  informasi  secara  otomatis.  Biasanya,  sistem  temu  balik  informasi  ini digunakan untuk mencari informasi pada informasi yang tidak terstruktur, seperti laman web atau dokumen.
                 Ide  utama  dari  sistem  temu  balik  informasi  adalah  mengubah search  query menjadi ruang vektor.</p> 
@@ -68,7 +87,7 @@
         </div>
 
         <div class="mainHeader">
-            <h1>How to Use</h1>
+            <h1 style="margin-top: 25px;">How to Use</h1>
         </div>
         <div class="paragraph">
             <ol>
@@ -78,18 +97,18 @@
         </div>
 
         <div class="mainHeader">
-            <h1>About Us</h1>
-            <p style="padding-bottom: 1px;">
+            <h1 style="margin-top: 25px;">About Us</h1>
+        </div>
+        <p class="paragraph" style="text-align: center;padding: 15px;">
             Kami bertiga Mahasiswa Jurusan Teknik Informatika ITB<br>
             Kami mengerjakan Search Engine sederhana melalui website lokal
-            </p>
-        </div>
+        </p>
 
-        <h4 style="text-align: center;">My Failed Search Engine Is Wrong As I Expected</h4>
+        <h4 style="text-align: center;">[ My Failed Search Engine Is Wrong As I Expected ]</h4>
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="{{ url_for('static', filename = 'Pedro.png')}}" alt="Rhapsodya Piedro Asmorobangun" style="width:100%">
+                    <img src="{{ url_for('static', filename = 'Pedro.png')}}" alt="Rhapsodya Piedro Asmorobangun" style="width:50%" class="photos">
                     <div class="container">
                         <h2>Rhapsodya Piedro Asmorobangun</h2>
                         <p>Asal : Bali</p>
@@ -101,7 +120,7 @@
 
             <div class="column">
                 <div class="card">
-                    <img src = "{{ url_for('static', filename = 'Kharisma.jpg')}}" alt="Made Kharisma Jagaddhita" style="width:100%">
+                    <img src = "{{ url_for('static', filename = 'Kharisma.jpg')}}" alt="Made Kharisma Jagaddhita" style="width:50%" class="photos">
                     <div class="container">
                         <h2>Made Kharisma Jagaddhita</h2>
                         <p>Asal : Bali</p>
@@ -112,7 +131,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src= "{{ url_for('static', filename = 'Dito.jpg')}}" alt="Benidictus Galih Mahar Putra" style="width:100%">
+                    <img src= "{{ url_for('static', filename = 'Dito.jpg')}}" alt="Benidictus Galih Mahar Putra" style="width:50%" class="photos">
                     <div class="container">
                         <h2>Benidictus Galih Mahar Putra</h2>
                         <p>Asal : Probolinggo</p>

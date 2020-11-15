@@ -2,6 +2,15 @@
 <html>
     <head>
         <title>My Failed Search Engine Is Wrong As I Expected</title>
+        <style>
+            table{
+                width: 100%;
+            }
+            th,td,tr{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
     </head>
     <body>
         <h1 style="text-align: center;">My Simple Search Engine</h1>
@@ -35,16 +44,13 @@
             {% endfor %}
         </ol>
         <table>
-            <th>
-                <td> Term </td>
-                <td> Query </td>
-                {% for i in sortedNamaFile %}
-                <td> {{i}} </td>
-                {% endfor %}
-            </th>
+            <td> Term </td>
+            <td> Query </td>
+            {% for i in sortedNamaFile %}
+            <td> {{i}} </td>
+            {% endfor %}
             {% for i in printTable %}
             <tr>
-                <td></td>
             {% for x in i %}
                 <td> {{x}} </td>
             {% endfor %}
