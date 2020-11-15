@@ -24,12 +24,13 @@
         <hr>
         <p>Hasil Pencarian (diurutkan dari tingkat kemiripan tertinggi)</p>
         <ol>
-            <li> 
-                <a href="/files/judul01.txt">judul01</a>
-                <p>Jumlah kata</p>
-                <p>Tingkat kemiripan</p>
-                <p>kalimat pertama dari Dokumen</p>
+            {for i in sortedNamaFile}
+            <li>
+                <p>Jumlah kata {{sumFile}}</p>
+                <p>Tingkat kemiripan {{sim}}</p>
+                <p>Kalimat pertama dari dokumen {{kalimatPertamaFile}}</p>
             </li>
+            {endfor}
         </ol>
         <table>
             <th>
