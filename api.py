@@ -18,7 +18,7 @@ def home():
 @app.route('/<query>', methods=['GET', 'POST'])
 def termsFile(query):
     if request.method == 'POST' and 'Query' in request.form :
-        variable = request.form['Query']
+        query = request.form['Query']
         return redirect(url_for('termsFile', query = query))
     else :
         sortedNamaFile = namaFile
