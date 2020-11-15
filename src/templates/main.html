@@ -27,6 +27,7 @@
         <ol>
             {% for i in range (length) %}
             <li>
+                <a href="{{url_for('static', filename=sortedNamaFile[i])}}">{{sortedNamaFile[i]}}</a>
                 <p>Jumlah kata: {{sumFile[i]}}</p>
                 <p>Tingkat kemiripan: {{sim[i] * 100}}%</p>
                 <p>Kalimat pertama dari dokumen: {{kalimatPertamaFile[i]}}...</p>
@@ -55,6 +56,6 @@
         <hr>
     </body>
     <footer>
-        <a href="/files/Perihal.txt">Perihal</a>
+        <a href="{{url_for('perihal')}}">Perihal</a>
     </footer>
 </html>

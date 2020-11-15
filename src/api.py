@@ -80,5 +80,9 @@ def termsFile(query):
 
             return render_template('main.html', length = len(sim), sortedNamaFile = sortedNamaFile, namaFile = namaFile, sim = sim, sumFile = sumFile, kalimatPertamaFile = kalimatPertamaFile, printTable = printTable, show = 1)
 
+@app.route('/Perihal')
+def perihal():
+    return render_template('perihal.html')
+
 if __name__ == '__main__' :
     app.run()
