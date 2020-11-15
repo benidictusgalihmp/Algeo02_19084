@@ -13,7 +13,7 @@ def home():
         variable = request.form['Query']
         return redirect(url_for('termsFile', name = variable))
     else :
-        return render_template('main.html')
+        return render_template('main.html', namaFile = namaFile)
 
 @app.route('/query', methods=['GET', 'POST'])
 def termsFile(name):

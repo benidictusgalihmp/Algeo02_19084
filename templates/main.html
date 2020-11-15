@@ -5,10 +5,16 @@
     </head>
     <body>
         <h1 style="text-align: center;">My Simple Search Engine</h1>
-        <p>Daftar Dokumen</p>
-        <div class="wrapper">
-            <input type="text" class="input" name="Query" placeholder="Search query">
-        </div>
+        <tr>
+            <td> Daftar dokumen : </td>
+            {% for i in namaFile %}
+            <td> {{i}} </td>
+            {% endfor %}
+        </tr>
+        <form>
+            <input type="text" class="input" placeholder="Search query" name="Query">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
         <hr>
         <p>Hasil Pencarian (diurutkan dari tingkat kemiripan tertinggi)</p>
         <ol>
@@ -19,6 +25,24 @@
                 <p>kalimat pertama dari Dokumen</p>
             </li>
         </ol>
+        <table>
+            <th>
+                <td> Term </td>
+                <td> Query </td>
+                {% for i in namaFile %}
+                     <td> {{i}} </td>
+                {% endfor %}
+            </th>
+            <p>{{printTable}}</p>
+            {% for i in printTable %}
+            <tr>
+                {% for x in i %}
+                <td> {{x}} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
         <hr>
     </body>
     <footer>
