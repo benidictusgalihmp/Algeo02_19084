@@ -11,7 +11,7 @@
             <td> {{i}} </td>
             {% endfor %}
         </tr>
-        <form>
+        <form method = "post">
             <input type="text" class="input" placeholder="Search query" name="Query">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
@@ -29,16 +29,16 @@
             <th>
                 <td> Term </td>
                 <td> Query </td>
-                {% for i in namaFile %}
-                     <td> {{i}} </td>
+                {% for i in sortedNamaFile %}
+                <td> {{i}} </td>
                 {% endfor %}
             </th>
-            <p>{{printTable}}</p>
             {% for i in printTable %}
             <tr>
-                {% for x in i %}
+                <td></td>
+            {% for x in i %}
                 <td> {{x}} </td>
-                {% endfor %}
+            {% endfor %}
             </tr>
             {% endfor %}
         </table>

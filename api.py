@@ -10,24 +10,26 @@ app.config["DEBUG"] = True
 @app.route('/', methods=['GET','POST'])
 def home():
     if request.method == 'POST' and 'Query' in request.form :
-        variable = request.form['Query']
-        return redirect(url_for('termsFile', name = variable))
+        query = request.form['Query']
+        return redirect(url_for('termsFile', query = query))
     else :
         return render_template('main.html', namaFile = namaFile)
 
-@app.route('/query', methods=['GET', 'POST'])
-def termsFile(name):
+@app.route('/<query>', methods=['GET', 'POST'])
+def termsFile(query):
     if request.method == 'POST' and 'Query' in request.form :
         variable = request.form['Query']
-        return redirect(url_for('termsFile', name = variable))
+        return redirect(url_for('termsFile', query = query))
     else :
-        queryTerms = countTerm(name, name)
+        sortedNamaFile = namaFile
+
+        queryTerms = countTerm(query, query)
 
         #sumFile = jumlah kata pada setiap file
         sumFile = getFileSum(kalimatFile)
 
         #fileTerms = perhitungan term pada kalimatFile 
-        fileTerms = getFileTerms(kalimatFile, name)
+        fileTerms = getFileTerms(kalimatFile, query)
 
         #sim = Similarity dari query dengan semua file
         sim = getAllSim(queryTerms, fileTerms)
@@ -38,7 +40,7 @@ def termsFile(name):
             for j in range(0, n-i-1):  
                 if sim[j] < sim[j+1] : 
                     sim[j], sim[j+1] = sim[j+1], sim[j]
-                    namaFile[j], namaFile[j+1] = namaFile[j+1], namaFile[j]
+                    sortedNamaFile[j], sortedNamaFile[j+1] = sortedNamaFile[j+1], sortedNamaFile[j]
                     kalimatFile[j], kalimatFile[j+1] = kalimatFile[j+1], kalimatFile[j]
                     fileTerms[j], fileTerms[j+1] = fileTerms[j+1], fileTerms[j]
                     sumFile[j], sumFile[j+1] = sumFile[j+1], sumFile[j]
@@ -58,7 +60,7 @@ def termsFile(name):
                 printTable.append(printTerms)
         for i in range(len(printTable)):
             print(printTable[i])
-        return render_template('main.html', namaFile = namaFile, sumFile = sumFile, sim = sim, kalimatPertamaFile = kalimatPertamaFile, printTable = printTable)
+        return render_template('main.html', sortedNamaFile = sortedNamaFile, namaFile = namaFile, sumFile = sumFile, sim = sim, kalimatPertamaFile = kalimatPertamaFile, printTable = printTable)
 
 if __name__ == '__main__' :
     app.run()
