@@ -2,24 +2,57 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Alata'>
         <title>Perihal</title>
         <style>
+            html{
+                font-family: 'Alata';
+                box-sizing: border-box;
+            }
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
             .mainHeader{
+                padding-bottom: 1px;
                 text-align: center;
-                font-size: 40%;
+                font-size: smaller;
                 background-color: rgb(24, 24, 24);
-                background-size: 300%;
                 color: white;
             }
             .closing-Statement{
                 text-align: center;
-                text-shadow: 5% #33ccff;
+                background-color: black;
+                color: white;
+                font-size: large;
+                padding: 1px;
             }
-            html{
-                box-sizing: border-box;
+            .paragraph{
+                font-size: 15px;
+
             }
-            header{
-                display: block;
+            .card {
+                box-shadow: 7px 9px 17px 0 rgb(95, 95, 95);
+                margin: 8px;
+            }
+            .column {
+                float: left;
+                width: 33.3%;
+                margin-bottom: 16px;
+                padding: 0 8px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .container::after, .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            @media screen and (max-width: 650px) {
+                .column {
+                    width: 100%;
+                    display: block;
+                }
             }
         </style>
     </head>
@@ -29,39 +62,69 @@
         </div>
         <div class="paragraph">
             <p>Temu-balik informasi (information retrieval) merupakan proses menemukan kembali  (retrieval)  informasi  yang  relevan  terhadap  kebutuhan  pengguna  dari  suatu kumpulan  informasi  secara  otomatis.  Biasanya,  sistem  temu  balik  informasi  ini digunakan untuk mencari informasi pada informasi yang tidak terstruktur, seperti laman web atau dokumen.
-                Ide  utama  dari  sistem  temu  balik  informasi  adalah  mengubah search  query menjadi ruang vektor Setiap dokumen maupun query dinyatakan sebagai vektor w = (w1, w2,..., wn) di dalam Rn, dimana nilai wi dapat menyatakan jumlah kemunculan kata tersebut dalam dokumen (term  frequency). Penentuan dokumen mana yang relevan dengan search query dipandang sebagai pengukuran kesamaan (similarity measure)  antara query dengan dokumen. Semakin sama suatu vektor dokumen dengan vektor query, semakin relevan dokumen tersebut dengan query. Kesamaan tersebut dapat diukur dengan cosine similarity.
-                Pada search engine yang kami buat, kami terlebih dahulu melakukan stemming dan menghilangkan stopwords dari dokumen dan query untuk menemukan termnya. Dari term yang ditemukan, akan dibuat kamus data dan vektor dari query dan dokumen berdasarkan banyak kemunculan term. Setelah itu, akan ditemukan nilai similarity dari setiap dokumen dengan query dengan menggunakan rumus cosine similarity. Hasil pencarian dari mesin pencarian ini diurutkan berdasarkan nilai similarity yang telah ditemukan.
-            </p>
+                Ide  utama  dari  sistem  temu  balik  informasi  adalah  mengubah search  query menjadi ruang vektor.</p> 
+            <p>Setiap dokumen maupun query dinyatakan sebagai vektor w = (w1, w2,..., wn) di dalam Rn, dimana nilai wi dapat menyatakan jumlah kemunculan kata tersebut dalam dokumen (term  frequency). Penentuan dokumen mana yang relevan dengan search query dipandang sebagai pengukuran kesamaan (similarity measure)  antara query dengan dokumen. Semakin sama suatu vektor dokumen dengan vektor query, semakin relevan dokumen tersebut dengan query. Kesamaan tersebut dapat diukur dengan cosine similarity.</p>
+            <p>Pada search engine yang kami buat, kami terlebih dahulu melakukan stemming dan menghilangkan stopwords dari dokumen dan query untuk menemukan termnya. Dari term yang ditemukan, akan dibuat kamus data dan vektor dari query dan dokumen berdasarkan banyak kemunculan term. Setelah itu, akan ditemukan nilai similarity dari setiap dokumen dengan query dengan menggunakan rumus cosine similarity. Hasil pencarian dari mesin pencarian ini diurutkan berdasarkan nilai similarity yang telah ditemukan.</p>
         </div>
 
         <div class="mainHeader">
-            <h2>How to Use</h2>
+            <h1>How to Use</h1>
         </div>
         <div class="paragraph">
-            
+            <ol>
+                <li>Upload file dalam extensi .txt</li>
+                <li>Cari dokumen yang anda inginkan pada search query</li>
+            </ol>
         </div>
 
         <div class="mainHeader">
-            <h3>About-Us</h3>
-            <p>
-            Kami bertiga mahasiswa ITB jurusan Teknik Informatika ITB<br>
-            Kami mengerjakan tugas besar Algeo membuat Search Engine sederhana melalui website lokal
+            <h1>About Us</h1>
+            <p style="padding-bottom: 1px;">
+            Kami bertiga Mahasiswa Jurusan Teknik Informatika ITB<br>
+            Kami mengerjakan Search Engine sederhana melalui website lokal
             </p>
         </div>
 
         <h4 style="text-align: center;">My Failed Search Engine Is Wrong As I Expected</h4>
-
-        <div class="column">
-            <div class="card">
-                <h5>Benidictus Galih Mahar Putra</h5>
-                <p>Asal : Probolinggo</p>
-                <p>Hobi : Desain rumah</p>
-                <p>Pesan : Terima kasih semua ! :D</p>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="../img/Pedro.png" alt="Rhapsodya Piedro Asmorobangun" style="width:100%">
+                    <div class="container">
+                        <h2>Rhapsodya Piedro Asmorobangun</h2>
+                        <p>Asal : Bali</p>
+                        <p>Hobi : Mendengarkan radio seiyuu</p>
+                        <p>Pesan : Aku ingin ke Jepang...</p>
+                    </div>
+                </div>
             </div>
-        </div>
 
+            <div class="column">
+                <div class="card">
+                    <img src = ../src/img/Kharisma.jpg alt="Made Kharisma Jagaddhita" style="width:100%">
+                    <div class="container">
+                        <h2>Made Kharisma Jagaddhita</h2>
+                        <p>Asal : Bali</p>
+                        <p>Hobi : Main</p>
+                        <p>Pesan : Semoga asistennya baik</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="../img/Dito.jpg" alt="Benidictus Galih Mahar Putra" style="width:100%">
+                    <div class="container">
+                        <h2>Benidictus Galih Mahar Putra</h2>
+                        <p>Asal : Probolinggo</p>
+                        <p>Hobi : Berpetualang di dunia mimpi</p>
+                        <p>Pesan : Bermimpilah dalam mimpi !</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </body>
     <footer class="closing-Statement">
-        <h6>Tugas Besar Aljabar Linier dan Aljabar Geometri Selesai !</h6>
+        <p>Tugas Besar Aljabar Linier dan Aljabar Geometri Selesai !</p>
     </footer>
 </html>
