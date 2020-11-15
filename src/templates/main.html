@@ -22,15 +22,16 @@
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <hr>
-        <p>Hasil Pencarian (diurutkan dari tingkat kemiripan tertinggi)</p>
+        <p>Hasil Pencarian (diurutkan dari tingkat kemiripan tertinggi) :</p>
+        {% if show == 1 %}
         <ol>
-            {for i in sortedNamaFile}
+            {% for i in range (length) %}
             <li>
-                <p>Jumlah kata {{sumFile}}</p>
-                <p>Tingkat kemiripan {{sim}}</p>
-                <p>Kalimat pertama dari dokumen {{kalimatPertamaFile}}</p>
+                <p>Jumlah kata: {{sumFile[i]}}</p>
+                <p>Tingkat kemiripan: {{sim[i] * 100}}%</p>
+                <p>Kalimat pertama dari dokumen: {{kalimatPertamaFile[i]}}...</p>
             </li>
-            {endfor}
+            {% endfor %}
         </ol>
         <table>
             <th>
@@ -49,6 +50,7 @@
             </tr>
             {% endfor %}
         </table>
+        {% endif %}
 
         <hr>
     </body>

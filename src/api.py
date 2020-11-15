@@ -20,9 +20,9 @@ def home():
         for file in files :
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
         namaFile, kalimatFile = getFiles()
-        return render_template('main.html', namaFile = namaFile)
+        return render_template('main.html', namaFile = namaFile, show = 0)
     else :
-        return render_template('main.html', namaFile = namaFile)
+        return render_template('main.html', namaFile = namaFile, show = 0)
 
 @app.route('/<query>', methods=['GET', 'POST'])
 def termsFile(query):
@@ -35,10 +35,10 @@ def termsFile(query):
         for file in files :
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
         namaFile, kalimatFile = getFiles()
-        return render_template('main.html', namaFile = namaFile)
+        return render_template('main.html', namaFile = namaFile, show = 0)
     else :
         if len(lowStemStopSplit(query)) == 0 :
-            return render_template('main.html', namaFile = namaFile)
+            return render_template('main.html', namaFile = namaFile, show = 0)
         else :
             sortedNamaFile = namaFile
 
@@ -52,8 +52,19 @@ def termsFile(query):
             #sim = Similarity dari query dengan semua file
             sim = getAllSim(queryTerms, fileTerms)
 
-            #Buat di rank searchnya nanti
+            #Buat di tabel
             n = len(sim) 
+            printTable = []
+            for j in range(len(queryTerms)):
+                if (queryTerms[j][1] >= 1):
+                    printTerms = []
+                    printTerms.append(queryTerms[j][0])
+                    printTerms.append(queryTerms[j][1])
+                    for i in range(n):
+                        printTerms.append(fileTerms[i][j][1])
+                    printTable.append(printTerms)
+
+            #Buat di rank search
             for i in range(n-1): 
                 for j in range(0, n-i-1):  
                     if sim[j] < sim[j+1] : 
@@ -67,18 +78,7 @@ def termsFile(query):
             for i in kalimatFile :
                 kalimatPertamaFile.append(i.split('.')[0])
 
-            printTable = []
-            for j in range(len(queryTerms)):
-                if (queryTerms[j][1] >= 1):
-                    printTerms = []
-                    printTerms.append(queryTerms[j][0])
-                    printTerms.append(queryTerms[j][1])
-                    for i in range(n):
-                        printTerms.append(fileTerms[i][j][1])
-                    printTable.append(printTerms)
-            for i in range(len(printTable)):
-                print(printTable[i])
-            return render_template('main.html', sortedNamaFile = sortedNamaFile, namaFile = namaFile, sumFile = sumFile, sim = sim, kalimatPertamaFile = kalimatPertamaFile, printTable = printTable)
+            return render_template('main.html', length = len(sim), sortedNamaFile = sortedNamaFile, namaFile = namaFile, sim = sim, sumFile = sumFile, kalimatPertamaFile = kalimatPertamaFile, printTable = printTable, show = 1)
 
 if __name__ == '__main__' :
     app.run()
