@@ -5,6 +5,12 @@
     </head>
     <body>
         <h1 style="text-align: center;">My Simple Search Engine</h1>
+        <p>Upload file : </p>
+        <form action = '#' method = 'POST' enctype= "multipart/form-data">
+            <input type = "file" name = "file" multiple/>
+            <input type = "submit">
+        </form>
+        <br>
         <tr>
             <td> Daftar dokumen : </td>
             {% for i in namaFile %}
