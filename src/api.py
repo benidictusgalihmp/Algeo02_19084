@@ -3,11 +3,15 @@ from werkzeug.utils import secure_filename
 from backendTest import *
 
 namaFile, kalimatFile = getFiles()
+extension = {'txt'}
 
-app = Flask(__name__, template_folder = 'templates', static_folder = '../test')
+app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] ='../test'
-app.config['ALLOWED_EXTENSIONS'] = {'txt'}
 app.config["DEBUG"] = True
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in extension
 
 @app.route('/', methods=['GET','POST'])
 def home():
@@ -18,7 +22,8 @@ def home():
     elif request.method == 'POST' and 'file' in request.files :
         files = request.files.getlist('file')
         for file in files :
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
+            if allowed_file(file.filename) :
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
         namaFile, kalimatFile = getFiles()
         return render_template('main.html', namaFile = namaFile, show = 0)
     else :
@@ -33,7 +38,8 @@ def termsFile(query):
     elif request.method == 'POST' and 'file' in request.files :
         files = request.files.getlist('file')
         for file in files :
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
+            if allowed_file(file.filename) :
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
         namaFile, kalimatFile = getFiles()
         return render_template('main.html', namaFile = namaFile, show = 0)
     else :

@@ -89,7 +89,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="../img/Pedro.png" alt="Rhapsodya Piedro Asmorobangun" style="width:100%">
+                    <img src="{{ url_for('static', filename = 'Pedro.png')}}" alt="Rhapsodya Piedro Asmorobangun" style="width:100%">
                     <div class="container">
                         <h2>Rhapsodya Piedro Asmorobangun</h2>
                         <p>Asal : Bali</p>
@@ -101,7 +101,7 @@
 
             <div class="column">
                 <div class="card">
-                    <img src = ../src/img/Kharisma.jpg alt="Made Kharisma Jagaddhita" style="width:100%">
+                    <img src = "{{ url_for('static', filename = 'Kharisma.jpg')}}" alt="Made Kharisma Jagaddhita" style="width:100%">
                     <div class="container">
                         <h2>Made Kharisma Jagaddhita</h2>
                         <p>Asal : Bali</p>
@@ -112,7 +112,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="../img/Dito.jpg" alt="Benidictus Galih Mahar Putra" style="width:100%">
+                    <img src= "{{ url_for('static', filename = 'Dito.jpg')}}" alt="Benidictus Galih Mahar Putra" style="width:100%">
                     <div class="container">
                         <h2>Benidictus Galih Mahar Putra</h2>
                         <p>Asal : Probolinggo</p>
