@@ -1,0 +1,97 @@
+Diingatkan lagi ke yang terlambat, SOP udah berubah. Ada cek AFK, jangan panik. MSDM kelompok 3 nanyain, jangan langsung bales ke everyone.
+
+Competition & Community
+Departemen tech
+
+CNC siapa sih?
+sebelum 2019, "Pengembangan "Wawasan Karya" and "Komunitas" under IIT department
+
+Divisi CNC ingin menjadi yang terbaik. #makeITBGreatAgain.
+Kompetisi, prestasi ITB sedikit turun dibanding dulu.
+
+2020-2021
+Irfan Sofyana Putra - Zunan
+CnC
+
+Selama satu kepengurusan, dibantu beberapa divisi. Ada Ardy IF 17, divisi Data Science
+Steve, if 18 CTF
+Gunawan IF 18, Gamedev
+Hasan CP
+Matthew Kevin (MK) IF 18 UI UX
+
+HMIF Bootcamp
+ADa komunitas CnC, kegiatannya apa?
+Yang pertama HMIfbootcamp, membantu mahasiswa HMIF untuk mengenalkan lomba-lomba dan skillsnya bisa meningkat.
+
+Bootcamp tahun ini segera datang, kondisi seperti ini akan...
+medium.com/hmif-itb
+competition sharing, kisah inspiratif dari para pemenang yang memenangkan perlombaan dan kompetisi2 yang ada. Disebarin di medium. Tahun sebelumnya bentuknya talkshow, membagikan cerita2 pemenang dan ahli di bidangnya
+
+HMIF Challenge, kompetisi internal, untuk boost up skill dari para warga HMIF untuk mengikuti lomba2 informatikaan. Bisa dapatkan hadiah, bandingkan skill. Belum bisa dilaksanakan, tunggu aja.
+
+Competition Guideline, sedang membuat guide yang tujuannya membantu kalian2 yang belum kenal kompetisi bidang Informatika. Masih WIP, selesaikan secepatnya. Ini namanya Compete with HMIF.
+
+Competition Info (dijelaskan Zunan), bentuknya Google Sheet (bit.ly/InformasiLomba HMIF, pake email ITB)
+Isinya ada list pemenang dari tiap2 lomba HMIF, ada juga list perlombaan yang ada, timelinenya kapan, linknya, dsb. HMIF Members Achievements. Ada scoreboard pencapaian warga HMIF.
+
+Appreciation post, mengapresiasi setiap warga yang menang tiap perlombaan.
+
+GEMASTIK 13, lomba dari Kemendikbud, prestisius, di bidang teknologi informasi komputer. ITB terakhir juara umum tahun 2012.
+
+1. UI
+2. ITS
+3. Telkom
+4. ITB
+
+Timeline: Kemarin ada sosialisasi, langsung dilist hari ini harusnya, websitenya belum ada, di timeline dari 20 Juli sampai 7 Agustus pendaftaran. Pengumpulan karya 12 September, penyisihan 19 September, Final 21 - 24 Oktober. Ditmawa dan ITB niat banget tahun ini, udah ngontak HMIF buat ngadain ITB Online Hackathon setelah Gematik, minggu ini bakal dirilis.
+
+Cabang Lomba Gemastik:
+CP, CTF, Data Mining, UX Design, Animasi, Smart City
+Karya Tulis Ilmiah TIK, SE; Piranti cerdas, embedded system, IoT; Gamedeve, bisnis TIK
+
+Kemarin aku tahun lalu iseng ikut Gemastik Data Mining, ajuin proposal, lolos, lumayan, bisa nyumbang medali perunggu. Buat kalian, jangan ngerasa minder, tetap cobain aja. Mungkin itu aja.
+
+SEbagian dari kalian berpikir, banyak orang yang lebih baik, aku ini enggak punya skill, pasti kalah. Di slide selanjutnya, mencoba merubah pandangan kalian.
+
+"A little bit of slope makes up for a lot of y-intercept" - John Ousterhout
+
+Ibaratnya dua orang mempunyai starting point sama, skillsnya beda. Tetapi setelah beberapa saat, orang yang di bawah skillnya menaik; gradiennya tinggi. Suatu ketika, orang yang di bawah, terus mendekati orang di atas. Ada posisi yang sama dengan orang di atas. Dan di suatu posisi, orang tadi yang gradiennya lebih miring, akan di atas orang yang skill starting pointnya lebih tinggi.
+
+Tidak penting skill awal dimana, yang penting gradiennya. Analogikan sebagai perubahan skill dibanding waktu. Yang terpenting menjadi yang terbaik di setiap saat. "the most important thing is to get better continuously". Yang kalian harus miliki adalah mental berjuang, hal yang terpenting adalah cara menjadi lebih baik. Pasti ada suatu saat mengalahkan orang2 yang skillnya di atas kalian.
+
+https://secondbreakfast.co/a-little-bit-of-slope
+
+UI/UX, Matthew Kevin A
+Pernah pake aplikasi, pernah gak, aplikasinya pas dipake enggak enak, otomatis FInya enggak bakal mau pake kan? Siapa yang mau aplikasi enggak enak? Kalian sebagai mahasiswa IF harus bisa bikin aplikasi yang berguna dan enak dipakai. Untuk menggambarkan,
+userinyerface.com
+meet UI:UX
+Menyelesaikan masalah yang terkait pengguna
+UI: User Interface, bagaimana sesuatu didesain, dan dilihat user, enak atau enggak. Desain dari apikasinya.
+UX: User Experience, lebih ke usernya itu. Rasa yang diberikan aplikasi gimana.
+
+Ibaratnya yang bilang I love it itu user. Bagi user, mainannya bagus, tapi bagi pengguna, ngeliatnya pantat, kan aneh. Kasarnya gitu. Yang bagi designer bagus, belum tentu pengguna enak pake.
+
+Why UI/UX?
+Bidang ini penting banget, apalagi kompetisi. Kemampuannya berguna di berbagai bidang. Di HMIF langka yang berminat. Kira2 bisa diliat di slide, cuma kalau mau ikut kompetisi yang bener2 UI/UX doang bisa dihitung jari, 5 setahun. UI/UX multidimensi. Konsep ini bisa ikut berbagai kompetisi, bikin app, web design, hackathon, gitu2.
+Tadi kompetisi, karir lumayan banyak.
+
+Kesannya, terjun UI UX agak jelek. Sempat ngobrol, dia setuju, targetnya company gede (Gojek, dll), kesannya enggak terlalu kepake. Untuk perusahaan pivot design agak langka. Seberapa bulan sekali ganti design. Ada kerjaan. Jangan terjun murni, bisa dikerjakan di konsep lain. Misalnya FE, bisa pakai prinsip UI/UX untuk desain aplikasi. Dikasih design dari pihak UI/UX, oh ini kurang nih. Bisa kasih masukan, enggak asal bikin doang.
+
+Cara belajar yang benar enggak ada, gimananya: dribble.com, behance.net, dll. Untuk ngeliat aplikasi yang dibuat orang lain.
+Buat prototype ada aplikasinya: Adobe XD, Figma (biasanya ini), sketch, Marvelapp, etc.
+
+Harus berdasarkan: User Experience, User Interaction, Interaction Design (gimana caranya user berinteraksi sama aplikasi), Copywriteing, HCI (Human Computer Interaction)
+
+Portfolio bagus, buat belajar, buat merepresentasikan diri sendiri pada orang lain, sekalian explore.
+
+Follow akun IG yang terkait application design. Mockup ditunjukin. Designer memes.
+
+TErtarik: ID: monster_ios_h
+Github: mkamadeus
+
+Kalau lomba sebenarnya penting, untuk memahami konsepnya enggak perlu design.
+
+
+Kalo belajar aplikasi prototype, enggak terlalu ngikutin tutorial, lebih ke explore sendiri. Mau bikin sesuatu, misalnya butuh apa, bikin animasi, baru digoogle cara bikinnya gimana. Lebih ke tutorial, ke YT, lebih ke workflownya, alur kerjanya gimana. Nyiapin apa, warna2nya, fontnya. Jangan terpatok satu tutorial, pahami workflow, lalu dengan kreativitas sendiri.
+
+
