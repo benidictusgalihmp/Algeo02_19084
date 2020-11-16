@@ -1,0 +1,118 @@
+Steve Bezalel, dari ketua komunitas CTF
+
+Nyari bendera
+Cyber securit penting di era sekarang
+Tokopedia kena hack, di Tokopedia punya tim cyber security pasti bagus, masih bisa kena hack. Bayangin kalo enggak ada tim itu.
+
+CTF ngumpulin bendera, bukan hack IG orang, udah jago mungkin bisa. CTF FORMATnya berapa challenge, bakal dapet flag. ada string gak jelas.
+
+Nanti bakal ada input buat masukin flag, semakin tinggi poin, semakin tinggi poin.
+
+CTF ada Jeopardy (nyerang sistem punya panitia, ada file, cari flag di file)
+Attack Defense
+Hack the Box, agak jarang, mirip2 Jeopardy
+
+Web Exploitation, cari bug di web, banyak banget komponennya, FE, BE, databse, cari itu, dapetin flag dari vulnerability itu
+Binary exploitation/Pwn, cari vulnerability di suatu program
+Cryptography, dikasih text acak, cari awalnya kayak gimana. Kriptografi ada matkulnya di semester 4, auto A
+Reverse Engineering, baca kode, pahamin kode, kode itu melakukan sesuatu terhada
+Ada serial code, matiin internet, yang ngecrack caranya dengan buka kode validasi, liat algoritmanya kayak gimana.
+Digital Forensics, file forensic, bisa nyembunyiin sesuatu dalam gambar, data keyboard apa aja
+
+Cryptography
+HMIF{[\w]+]}
+
+VAWT
+HMIF
+H- v = 8 - 22 = -14 = 12 = geser 12 kali
+Flagnya formatnya kayak gitu
+HMIF[gampangnya_tinggal_digesergeser]
+
+Pwn
+Suatu varabel secret, disuruh masukkan integer, flagnya sama dengan secret, dapet flag, gimana cara exploit.
+
+input() function is vulnerable di Python 2, bisa masukin nama variabel, sehingga bakal jadi nama variabel. Input secret, n==secret, di bagian if pasti bener, flagnya bisa dapet kayak gitu.
+
+Learn many programming languages/frameworks
+Banyak banget kode bahasa2 beda2
+Tidaklangsung terekspos, bakal belajar banyak tentang itu
+Improve Scripting/Automation. Dia asisten tahun lalu pengkom, bikin autograder buat seleksi mana yang udah 100, enggak usah periksa sendiri gitu.
+Improve debugging skills, di ranah pwn sama reverse engineering, bakal banyak banget pake tool debugger
+Linux butuh banget, jago di linux, IF/STI pake banyak banget Linux
+Orkom/Arsikom, bakal banyak ke reverse engineering dan pwn
+
+CTF career opportunities
+SE
+web developer (security)
+system engineer
+professional pentester (celah aplikasi)
+Security engineer (make sure enggak ada celah)
+white hat hacker (cari vulnerability)
+black hat hacker (daripada ngelaporin, website ini telah dihack oleh)
+
+CTF
+Get a Linux, enggak usah install, bisa pake virtual box, ada linux lightweight
+start ctfing
+read writeups tentang challenge yang kamu kerjain
+ctftime.org (ngelaksanain ctf banyak)
+ctfhehe.xyz (kita yang buat)
+playgroundctf.xyz(kating IF, agak jarang)
+ctf.if.itb.ac.id (bisa masuk2in soal latihan disitu)
+
+ittoday.id
+compfest.id
+Tahun 2018, sempat sampai ke final Seccon di Tokyo, posisi ke-8
+bit.ly/AkuMauJadiHackerman
+
+Akeyla, bakal banyak ke hacker gitu, itu apakah materinya susah diakses?
+
+Limitasi CTF pake Windows apa?
+Linux banyak banget tools yang enggak ada di Windows, install sesuatu tinggal bla3, download gimana, banyak tools yang enggak support
+
+beberapa tahun lalu, katinG IF, Linux rusak, pake Windows, enggak bisa ngapa2in, jadi beban buat tim. Disaranin banget pake Linux.
+
+Gunawan, Lord Gaben
+Make games, make money
+In short, what we do in this community
+worship characters we created along the way
+tfgungun.itch.io
+
+Why you should join, APBN Indonesia 2019
+Global Games Market, 159 berapa gitu, ini proyeksi 2020, kira2 industri game global raup pemasukan berapa dari banyak sektor
+Ini dibaca dikit, artikelnya banyak banget
+
+We don't understand economy higglejiggle
+But the number is tempting right?
+Marketnya gede banget, masih sangat growing, buat yang belum tahu, ngalahin market music dan movie secara telak, movie dan music digabung, enggak lebih dari setengah market gamedev, really2 big, that's the point
+
+Bisa start anywhere:
+1. choose role
+2. cari resource, ilmu
+3. get into community, masuk komunitas circle gamedev
+4. don't be afraid to try things
+Dimulai dari coba2
+
+Unity, game engine, Brackeys, software yang memungkinkan membuat game, game dasar sampai advanced
+
+Game Maker's Toolkit, Hideo Kojima, banyak ngebahas game design, Hideo Kojima, he's out of the world, alien
+
+Gamedev bisa jadi apa? Kasarnya begitu, bagi 2, jadi main sama support
+
+Main produksi game secara langsung, support deadline, dijual kayak gini, producer, dst
+
+Enggak pingin bikin, bisa support, bener2 produksi bisa main
+Kita orang yang sering main game, ini rolenya bisa dari referensi Studio Agape, mencoba membuat lorenya sendiri, mungkin bakal berubah
+
+Beberpa aib, FYI, kita enggak bener2 banyak yang dipamerin, cuma bisa ngeliatin aktivitas
+
+Worshiping characters we created
+Sheryl the Waifu, menang resource 4000 dollar, wajib memuja dia
+
+Gamer, Weeb, Broke, Meme, Creative, this is the right place for you.
+
+bit.ly/FarmingDuitKuy
+LINE kurang untuk yang kurang absurd
+utamanya di Discord
+gamedev.itch.io
+
+
