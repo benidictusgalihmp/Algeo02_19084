@@ -51,23 +51,23 @@ def termsFile(query):
             #sumFile = jumlah kata pada setiap file
             sumFile = getFileSum(kalimatFile)
 
-            #fileTerms = perhitungan term pada kalimatFile 
+            #fileTerms = perhitungan term pada kalimatFile
             fileTerms = getFileTerms(kalimatFile, query)
 
             #sim = Similarity dari query dengan semua file
             sim = getAllSim(queryTerms, fileTerms)
 
             #Buat di rank search
-            n = len(sim) 
-            for i in range(n-1): 
-                for j in range(0, n-i-1):  
-                    if sim[j] < sim[j+1] : 
+            n = len(sim)
+            for i in range(n-1):
+                for j in range(0, n-i-1):
+                    if sim[j] < sim[j+1] :
                         sim[j], sim[j+1] = sim[j+1], sim[j]
                         sortedNamaFile[j], sortedNamaFile[j+1] = sortedNamaFile[j+1], sortedNamaFile[j]
                         kalimatFile[j], kalimatFile[j+1] = kalimatFile[j+1], kalimatFile[j]
                         fileTerms[j], fileTerms[j+1] = fileTerms[j+1], fileTerms[j]
                         sumFile[j], sumFile[j+1] = sumFile[j+1], sumFile[j]
-            kalimatPertamaFile = getKalimatPertama(kalimatFile)           
+            kalimatPertamaFile = getKalimatPertama(kalimatFile)
 
             #Buat di tabel
             printTable = getTableValue(queryTerms, fileTerms)

@@ -19,23 +19,23 @@ def lowStemStopSplit(strings) :
 def getFiles() :
 # Mereturn semua kalimat pada semua file .txt yang ada di directory files dalam bentuk array
     lines = []
-    namaFile = [] 
+    namaFile = []
     os.chdir('../test')
     for file in os.listdir('../test') :
         if file.endswith(".txt") :
-            f = open(file, "r")
+            f = open(file, "r", encoding="utf8")
             strings = ""
             for line in f.readlines() :
                 strings = strings + line
                 strings = strings + " "
             strings = strings.replace('\n','')
-            
+
             lines.append(strings)
             namaFile.append(file)
 
             f.close()
     os.chdir('../src')
-    
+
     return namaFile, lines
 
 def getKamusData(query) :
@@ -58,10 +58,10 @@ def getKamusData(query) :
             if i == j :
                 Found = True
                 break
-        
+
         if Found == False :
             kamusData.append(i)
-            
+
     return kamusData
 
 def getFileSum(kalimatFile):
@@ -112,7 +112,7 @@ def getSimilarity(QTerms, DTerms) :
     DLength = DLength ** 0.5
 
     Sim = Dot/(QLength * DLength)
-    
+
     return Sim
 
 def getAllSim(queryTerms, fileTerms) :
@@ -120,8 +120,8 @@ def getAllSim(queryTerms, fileTerms) :
     simArray = []
     for i in range(len(fileTerms)) :
         simArray.append(getSimilarity(queryTerms, fileTerms[i]))
-    
-    return simArray   
+
+    return simArray
 
 def getTableValue(queryTerms, fileTerms) :
     printTable = []
