@@ -9,7 +9,7 @@
                 font-family: 'Alata';
             }
             body{
-                background-color: rgb(6, 156, 26);
+                background-color: rgb(173, 92, 0);
                 margin-left: 5%;
                 margin-right: 5%;
             }
@@ -53,15 +53,15 @@
                 background-color: rgb(32, 32, 32);
             }
             .contentTable{
-                color: rgb(236, 236, 236);
+                color: black;
                 padding: 5px 0px 5px 10px;
                 text-align: left;
-                background-color: rgb(77, 77, 77);
+                background-color: rgb(189, 189, 189);
             }
             .daftarDokumen{
-                color: rgb(236, 236, 236);
+                color: black;
                 border: 2px solid rgb(238, 238, 238);
-                background-color: rgb(60, 60, 60);
+                background-color: rgb(189, 189, 189);
                 border-radius: 10px;
                 padding: 8px 0px 8px 20px;
                 margin-bottom: 20px;
@@ -77,6 +77,7 @@
                 background-image: url('{{url_for('static',filename='search_icon.png')}}');
                 background-position: 10px 10px; 
                 background-repeat: no-repeat;
+                cursor: pointer;
             }
             h1{
                 color: rgb(236, 236, 236);
@@ -108,7 +109,7 @@
         <h1>My Simple Search Engine</h1>
     </head>
     <body>
-        <p class="mainHeader">Upload your file .txt here </p>
+        <p class="mainHeader" style="width: 23%;">Upload your file .txt here </p>
         <form class="telusuri" action = '#' method = 'POST' enctype= "multipart/form-data">
             <input type = "file" name = "file" multiple/>
             <input type = "submit">
@@ -131,7 +132,7 @@
         {% if show == 1 %}
         <ol>
             {% for i in range (length) %}
-            <li class="daftarDokumen" style="padding: 8px 0px 8px 40px; background-color: rgb(77, 77, 77);text-shadow: 0px 0px 0px;">
+            <li class="daftarDokumen" style="padding: 8px 0px 8px 40px; background-color: rgb(189, 189, 189);text-shadow: 0px 0px 0px;">
                 <a class="headerSearch" href="{{url_for('static', filename= '../../test/' + sortedNamaFile[i])}}">{{sortedNamaFile[i]}}</a>
                 <hr>
                 <p>Jumlah kata: {{sumFile[i]}}</p>
